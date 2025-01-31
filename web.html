@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to OsmanMirood Website</title>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(186, 32, 137);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: hsl(226, 90%, 45%);
+            text-shadow: 2px 2px 4px #d31c1c;
+        }
+
+        p {
+            text-indent: 50px;
+            text-align: justify;
+            letter-spacing: 1px;
+            margin: 20px;
+        }
+
+        /* Header Style */
+        #Header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #Header img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+        }
+
+        /* Navigation Menu */
+        #nav {
+            background-color: #333;
+            text-align: center;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #nav ul li {
+            display: inline-block;
+            margin: 15px;
+        }
+
+        #nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #444;
+            transition: background-color 0.3s ease;
+        }
+
+        #nav ul li a:hover {
+            background-color: #d31c1c;
+        }
+
+        /* Content Section */
+        #content-wrap {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px;
+            flex-wrap: wrap;
+        }
+
+        #content-wrap img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #content-wrap h3 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            margin: 20px;
+            display: inline-block;
+            width: 180px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .gallery:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        .desc {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            color: white;
+        }
+
+        /* Button to Top */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #d31c1c;
+        }
+    </style>
+
+    <script>
+        // Slideshow script
+        var images = ["images/2.webp", "images/1.webp", "images/3.jpg", "images/4.jpg", "images/5.jpg"];
+        var currentIndex = 0;
+        
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("slideshowImage").src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 3000); // Change image every 3 seconds
+
+        // Scroll to top button script
+        var mybutton = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        };
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>Kusoo dhowaaw OsmanMirood Website</h1>
+    <p>OsmanMirood Website waxaa la asaasay 2025 waa goob laga heli kara wax walba aad u baahantahay</p>
+
+    <!-- Header Section -->
+    <div id="Header">
+        <img src="images/2.webp" alt="Logo">
+    </div>
+
+    <!-- Navigation Menu -->
+    <div id="nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html">GMAIL</a></li>
+            <li><a href="index.html">ADDRESS</a></li>
+            <li><a href="index.html">PRODUCTS</a></li>
+            <li><a href="index.html">CONTACTS</a></li>
+        </ul>
+    </div>
+
+    <!-- Slideshow Image -->
+    <img id="slideshowImage" src="images/2.webp" width="300" height="300" style="display: block; margin: 20px auto;">
+
+    <!-- Content Section -->
+    <div id="content-wrap">
+        <div class="gallery">
+            <img src="images/3.jpg" alt="Gallery Image">
+            <div class="desc">Image Description</div>
+        </div>
+        <div class="gallery">
+            <img src="images/4.jpg" alt="Gallery Image">
+            <div class="desc">Image Description</div>
+        </div>
+        <div class="gallery">
+            <img src="images/5.jpg" alt="Gallery Image">
+            <div class="desc">Image Description</div>
+        </div>
+    </div>
+
+    <!-- Button to Scroll to Top -->
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">Top</button>
+
+    <!-- Footer -->
+    <div id="Footer">
+        <p>OSMAANMIROOD WEBSITE.COM 2025</p>
+    </div>
+</body>
+</html>
